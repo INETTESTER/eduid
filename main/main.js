@@ -2,18 +2,18 @@
 import { sleep } from 'k6';
 import { error_check } from '../check/check.js';
 import { scenario } from 'k6/execution';
-import { generateThaiCitizenId } from '../api/Regis_Edu.js';
 import { Login_CID } from '../api/Login_CID.js';
 import { Get_Account_Profile } from '../api/Get_Account_Profile.js';
+import { Regis_Edu } from '../api/Regis_Edu.js';
 
 
 
 //============================================================================
 
 export default function () {    //เรียกใช้ API ใน export default function
-  //response = generateThaiCitizenId(cid)
   //response = Login_CID()
-  response = Get_Account_Profile()
+  // response = Get_Account_Profile()
+  // response = Regis_Edu(cid)
 
 
   error_check(response);
