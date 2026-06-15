@@ -1,0 +1,19 @@
+import http from 'k6/http';
+import { token } from './env.js';
+
+export function Get_Account_Profile() {
+    const url = 'https://edu.id.th/api/v1/accounts/profile';
+
+    const params = {
+        headers: {
+            'Authorization': 'Bearer ' + token,
+            'Cookie': 'access_token=eyJhbGciOiJSUzI1NiIsImtpZCI6IjlhOTE2NWVhYzFjNGMyM2UwZjY1Njk0YTMyM2YzNmI3IiwidHlwIjoiSldUIn0.eyJsb2dpbl90eXBlIjoic2VsZi1sb2dpbiIsImF1ZCI6IjQxMzA1MTExLTJlMWMtNGVmMy1iY2NiLWI3OTY0Yzc4NTRjYSIsImlzcyI6Imh0dHBzOi8vZWR1LmlkLnRoIiwic3ViIjoiMDE5ZWMwZmYtYmUwZC03NjYzLWI1YzYtZDE5ZWQ5MTcyM2Q1IiwiZXhwIjoxNzgxNjA1NDAyLCJuYmYiOjE3ODE1MTkwMDIsImlhdCI6MTc4MTUxOTAwMiwianRpIjoiNjYzMzMwMzgzMDY0NjYzMTJkMzIzNjMwMzAyZDM0NjM2NTM4MmQzODMyMzYzMjJkNjMzMjYzMzU2MTY1NjM2NTYzMzMzMzY0In0.EclMLvmriJQ5DAKi1A0ptSnfqmQymdchjJKa8EsOCZxZmcVETEwRlxno7sTotKgtWIcASvyErFymobGGXl8d2LHTSjgCTCn03ved9K8j8UT1zqBH2Qy0jaooOklUvULpKOfP1zHdqfdas6N_4NUmzm5-Ua7M4LhJURq5szTICpE3E40wktDhUkyySv67B1s_OT2UP0Pnl1h8jlk9aj0kUueuByE_Wuj45xw7A80lYTKHvE0yh6pUMgHuE_sAskVdlA2uvRoXnGTm8GJ4_o9YijoJPs2NR_7X3LaG6NOuT1w3zIwq_b4SkV8UgMU9943Q4wYY3jHrf00krRqkoojfOw',
+        },
+    };
+
+    const response = http.get(url, params);
+
+    //console.log('Response body:', response.body);
+
+    return response;
+}

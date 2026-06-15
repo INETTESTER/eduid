@@ -2,20 +2,18 @@
 import { sleep } from 'k6';
 import { error_check } from '../check/check.js';
 import { scenario } from 'k6/execution';
-import { DownloadFile, GetProfile, PostProfile, PostProfile_2, PostProfile_3, UploadFile } from '../api/example.js';
+import { generateThaiCitizenId } from '../api/Regis_Edu.js';
+import { Login_CID } from '../api/Login_CID.js';
+import { Get_Account_Profile } from '../api/Get_Account_Profile.js';
 
 
 
 //============================================================================
 
 export default function () {    //เรียกใช้ API ใน export default function
-  //response = GetProfile()
-  //response = PostProfile()
-  //response = PostProfile_2()
-  //response = PostProfile_3(scenario)
-  //response = DownloadFile()
-  //response = UploadFile()
-  //response = UploadFile_2()
+  //response = generateThaiCitizenId(cid)
+  //response = Login_CID()
+  response = Get_Account_Profile()
 
 
   error_check(response);
