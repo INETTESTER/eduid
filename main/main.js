@@ -12,8 +12,8 @@ import { Regis_Edu } from '../api/Regis_Edu.js';
 
 export default function () {    //เรียกใช้ API ใน export default function
   //response = Login_CID()
-  // response = Get_Account_Profile()
-  response = Regis_Edu(cid)
+   response = Get_Account_Profile()
+  //response = Regis_Edu(cid)
 
 
   error_check(response);
